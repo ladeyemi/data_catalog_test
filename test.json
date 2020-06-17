@@ -1,0 +1,62 @@
+{
+    "structure": {
+        "type": "folder",
+        "children": {
+            "coda": {
+                "type": "folder",
+                "children": {
+                    "ct": {
+                        "type": "folder",
+                        "children": {
+                            "ct_cases": {
+                                "type": "dataset",
+                                "description": "CT cases are CT cases, right?",
+                                "data_owner": "Mark Drinkabeer"
+                            },
+                            "ct_reports": {
+                                "type": "dataset",
+                                "description": "Reports baby",
+                                "data_owner": "John Willsingloud"
+                            }
+                        }
+                    },
+                    "ndr": {
+                        "type": "folder",
+                        "children": {
+                            "ndr_reports": {
+                                "type": "dataset",
+                                "description": "NDR means No Dumb Requests",
+                                "data_owner": "Frank Whatsup"
+                            },
+                            "assessments": {
+                                "type": "dataset",
+                                "description": "Assessments of people in our organization",
+                                "data_owner": "Susan Knowitall"
+                            }
+                        }
+                    },
+                    "property": {
+                        "type": "folder",
+                        "children": {
+                            "addresses": {
+                                "type": "dataset",
+                                "description": "Addresses.. What else do you wanna know",
+                                "data_owner": "Jack Failedwhentried"
+                            }
+                        }
+                    }
+                }
+            },
+            "reference": {
+                "type": "folder",
+                "children": {
+                    "voa_teams": {
+                        "type": "dataset",
+                        "description": "VOA teams rock",
+                        "data_owner": "John Smith"
+                    }
+                }
+            }
+        }
+    }
+}

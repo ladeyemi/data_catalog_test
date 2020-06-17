@@ -5,5 +5,9 @@ export default function Main({
 
 }) {
     console.log(data)
-    return <Box name="root" data={data['structure']} />
+    return <Box name = "Data Catalog"
+    data = {
+        data['catalogue_item']
+    }
+    />
 }

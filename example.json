@@ -1,0 +1,19 @@
+{
+    "data_catalogue": "web link / address link to catalogue here",
+    "version": 1,
+    "catalogue_item": {
+        "type": "folder",
+        "children": {
+            "coda": { 
+
+            } ,
+            "reference": {
+                "type":"folder",
+                
+            } 
+        
+    } 
+
+}
+
+}

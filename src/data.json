@@ -1,62 +1,1729 @@
 {
-    "structure": {
+    "data_catalogue": "web link / address link to catalogue here",
+    "version": 1,
+    "catalogue_item": {
         "type": "folder",
         "children": {
             "coda": {
                 "type": "folder",
                 "children": {
-                    "ct": {
-                        "type": "folder",
-                        "children": {
-                            "ct_cases": {
-                                "type": "dataset",
-                                "description": "CT cases are CT cases, right?",
-                                "data_owner": "Mark Drinkabeer"
-                            },
-                            "ct_reports": {
-                                "type": "dataset",
-                                "description": "Reports baby",
-                                "data_owner": "John Willsingloud"
-                            }
-                        }
-                    },
                     "ndr": {
                         "type": "folder",
                         "children": {
-                            "ndr_reports": {
+                            "valuations": {
                                 "type": "dataset",
-                                "description": "NDR means No Dumb Requests",
-                                "data_owner": "Frank Whatsup"
+                                "title": "NDR Hereditament Valuations",
+                                "POMI_table_version": "0.3.0",
+                                "description": "20 variable table detailing NNDR valuations. Table not constrained by list year",
+                                "tags": [
+                                    "Hereditament_Valuations",
+                                    "Survey_Unit",
+                                    "Scales"
+                                ],
+                                "data_owner": "table creator being used as place holder olanrewaju.adeyemi@voa.gsi.gov.uk",
+                                "data_authorisers": "contact email addresses of DO nominated authorisers",
+                                "location": "/zones/reading/coda/valuations.parquat",
+                                "provenance": "table maintained by an SQL Stored Procedure which is pulled from POMI_DATA to CODA",
+                                "provenance_link": "R:\\I&A\\2. Work\\POMI\\PROD\\VALUATIONS.sql",
+                                "update_type": "Daily",
+                                "supported": "Currently in support",
+                                "data_items": {
+                                    "os_refno": {
+                                        "data_item_title": "Oracle System Reference Number",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "Oracle System Reference Number is a unique ID that links NDR assessments, analysis, survey and valuation",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "uarn": {
+                                        "data_item_title": "unique address reference number",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "Unique Address Reference Number generated at the point of CDB new address creation",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "list_year": {
+                                        "data_item_title": "the Rating List year",
+                                        "type": "decimal(4,0)",
+                                        "format": "YYYY",
+                                        "description": "the Rating List year that the valuation relates to",
+                                        "captured_how": "System Generated and Manually Generated",
+                                        "list_of_variables": [
+                                            "1995",
+                                            "2000",
+                                            "2005",
+                                            "2010",
+                                            "2017",
+                                            "2021"
+                                        ]
+                                    },
+                                    "originating_case_id": {
+                                        "data_item_title": "Case ID for the case that created the Valuation",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "Data item, often referred to as Case Number or Report Number, that links the Valuation in this dataset to the work item that created it",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "sublocation_code": {
+                                        "data_item_title": "Code detailing the local market / property characteristics",
+                                        "type": "string",
+                                        "format": "Maximum of five alpha/numerical characters",
+                                        "description": "Codifies the nature of the local property market and the characteristics of groups of hereditaments in that local market. The sublocation code is the most frequently used access path parameter. Selection of the correct SLC is fundamental to ensuring that accurate rental analysis and pattern valuation are undertaken / used.",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not appropriate, codes can be duplicated between owning Units"
+                                    },
+                                    "bulk_class_ind": {
+                                        "data_item_title": "details the Bulk Class of the subject property",
+                                        "type": "string",
+                                        "format": "Single character",
+                                        "description": "A single digit indicating the 'Bulk Class' of the subject hereditament.",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_values": {
+                                            "F": "Factories",
+                                            "L": "Land",
+                                            "M": "Miscellaneous",
+                                            "O": "Office",
+                                            "S": "Shop",
+                                            "W": "Warehouses and Stores"
+                                        }
+                                    },
+                                    "valuation_status": {
+                                        "data_item_title": "Code detailing the status of the valuation",
+                                        "type": "decimal(1,0)",
+                                        "format": "Single digit",
+                                        "description": "The valuation will be in one of two potential states, pattern valuation processed or valuation protected",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": {
+                                            "1": "Pattern Valuation Processed",
+                                            "2": "Valuation Protected"
+                                        }
+                                    },
+                                    "rounded_rv": {
+                                        "data_item_title": "Ratable Value produced by the pattern valuation process",
+                                        "type": "decimal(10,0)",
+                                        "format": "",
+                                        "description": "The RV produced by the automated CDB pattern valuation process following application of the rounding rules",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "proposed_rv": {
+                                        "data_item_title": "The Rateable Value produced by the case creating the valuation",
+                                        "type": "decimal(10,0)",
+                                        "format": "",
+                                        "description": "The final RV produced by processing of the case creating the valuation which will be entered into the Rating List",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "survey_method_code": {
+                                        "data_item_title": "Code detailing the survey method",
+                                        "type": "string",
+                                        "format": "3 characters",
+                                        "description": "Code detailing the survey / code of measuring practice used when arriving at the valuation. COMP is defined by the RICS",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": {
+                                            "EFA": "Effective Floor Area",
+                                            "GEA": "Gross External Area",
+                                            "GIA": "Gross Internal Area",
+                                            "NIA": "Net Internal Area",
+                                            "RCA": "Reduced Covered Area",
+                                            "OTH": "Other"
+                                        }
+                                    },
+                                    "nia_gia_system_code": {
+                                        "data_item_title": "CCode detailing how the associated survey data was change between NIA/GIA",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "Code detailing how the associated survey data was change between NIA/GIA",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": {
+                                            "C": "Converted",
+                                            "E": "Estimated",
+                                            "M": "Measured",
+                                            "S": "Scaled"
+                                        }
+                                    },
+                                    "other_addition_valuation": {
+                                        "data_item_title": "Total value of the all the elements classed as Other Additions included in the valuation",
+                                        "type": "decimal(10,0)",
+                                        "format": "",
+                                        "description": "Total value of the all the elements of the valuation classed as Other Additions. Null indicates no Other Additions",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "total_no_car_parking_spaces": {
+                                        "data_item_title": "Aggregation of all the instances and types of car parking spaces included in the valuations",
+                                        "type": "decimal(15,0)",
+                                        "format": "",
+                                        "description": "Aggregation of all the instances and types of car parking spaces, surfaced covered, surfaced open, unsurfaced covered, unsurfaced open, garage spaces, associated with the valuation",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "total_car_parking_area": {
+                                        "data_item_title": "Aggregation of all the instances and types of car parking area included in the valuations",
+                                        "type": "decimal(16,2)",
+                                        "format": "13 digit numerical to two decimal places",
+                                        "description": "Aggregation of the area of all the instances of car parking area, surfaced covered, surfaced open, unsurfaced covered, unsurfaced open, garage spaces, associated with the valuation",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "total_car_parking_valuation": {
+                                        "data_item_title": "The total value of the car parking associated with the valuation",
+                                        "type": "decimal(10,0)",
+                                        "format": "",
+                                        "description": "The total value of all the car parking elements that have been included in the valuation",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "plant_and_machinery_value": {
+                                        "data_item_title": "Total value of all the elements of plant and machinery included in the valuation",
+                                        "type": "decimal(10,0)",
+                                        "format": "",
+                                        "description": "Elements of plant and machinery, defined items at a hereditament that are liable to a rate, included in the valuation",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "factors_used": {
+                                        "data_item_title": "Code detailing if the existing or scale factors were used for the main body of the valuation",
+                                        "type": "string",
+                                        "format": "Single digit alpha or Null",
+                                        "description": "Code detailing if the existing or scale factors were used in the valuation. The default is the Existing Factors",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": {
+                                            "F": "Existing Factors",
+                                            "S": "Scale Factors",
+                                            "NULL": "Null"
+                                        }
+                                    },
+                                    "factor_adjustment_rate": {
+                                        "data_item_title": "Adjustment rate made to the scales used for the subject valuation",
+                                        "type": "decimal(6,4)",
+                                        "format": "Six digit numerical to four decimal places",
+                                        "description": "Adjustment rate made to the scales used for the subject valuation so that the specifics of the hereditament that are outwith the scale are taken into consideration",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "total_significant_area": {
+                                        "data_item_title": "Aggregation of all the areas that contribute to the valuation",
+                                        "type": "decimal(10,2)",
+                                        "format": "10 digit to two decimal places",
+                                        "description": "The total area of all elements of the survey where an area is assigned to a unit of use and that area contributes to the overall value",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "scale_reference": {
+                                        "data_item_title": "Reference ID for the ValuationScale used by the survey in arriving at valuation",
+                                        "type": "string",
+                                        "format": "18 alpha/numerical characters",
+                                        "description": "The scale reference used by the survey",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "is_published": "Yes",
+                                    "published_date": "date"
+                                }
+                            },
+                            "adjusted_rents": {
+                                "type": "dataset",
+                                "title": "NDR Adjusted Rental Data",
+                                "POMI_table_version": "V0.1.0",
+                                "description": "7 variable table detailing rental evidence that has been adjusted by the VOA. Table constrained to 2017 and 2021 list years",
+                                "tags": "curated from CDB data table - ADJUSTED_RENTS",
+                                "data_owner": "table creator being used as place holder olanrewaju.adeyemi@voa.gsi.gov.uk",
+                                "data_authorisers": "contact email addresses of DO nominated authorisers",
+                                "location": "/zones/reading/coda/adjusted_rents.parquet",
+                                "provenance": "table maintained by an SQL Stored Procedure which pulls the data from POMI_DATA to CODA",
+                                "provenance_link": "R:\\I&A\\2. Work\\POMI\\PROD\\ADJUSTED_RENTS.sql",
+                                "update_type": "Daily",
+                                "supported": "Currently in support",
+                                "data_items": {
+                                    "adrno": {
+                                        "data_item_title": "Reference ID for the adjustments",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "Reference ID for the adjustments that have been to the rental data",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "adrseqno": {
+                                        "data_item_title": "Sequence reference ID for the adjustments",
+                                        "type": "decimal(3,0)",
+                                        "format": "",
+                                        "description": "Sequence ID that enables the correct ordering of the adjustments made",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "for_id": {
+                                        "data_item_title": "Unique identification number for the Form Of Return",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "Number given to an Form Of Return, essentially a case number, at the point of creation",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "list_year": {
+                                        "data_item_title": "The Rating List year that the adjustment relate to",
+                                        "type": "string",
+                                        "format": "YYYY",
+                                        "description": "Adjustment to a rent is undertaken for a specific Rating List, this can be for the current year (defence) or for an upcoming Reval year",
+                                        "captured_how": "System Generate / Manually Captured",
+                                        "list_of_variables": [
+                                            "1995",
+                                            "2000",
+                                            "2005",
+                                            "2010",
+                                            "2017",
+                                            "2021"
+                                        ]
+                                    },
+                                    "is_preferred": {
+                                        "data_item_title": "Flag detailing if the adjustment is preferred or not",
+                                        "type": "string",
+                                        "format": "Single character",
+                                        "description": "When an adjustment is undertaken it can be flagged as the preferred adjustment. If there is only one set of adjustments then it has to be declared as the preferred",
+                                        "captured_how": "Manually",
+                                        "list_of_variables": {
+                                            "Y": "Preferred Adjustment ",
+                                            "N": "Not Preferred"
+                                        }
+                                    },
+                                    "created_date": {
+                                        "data_item_title": "Date that the adjustment was created",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date when the adjustment was created on the system",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "adjusted_rent": {
+                                        "data_item_title": "The figure of the adjusted rent",
+                                        "type": "decimal(10,0)",
+                                        "format": "",
+                                        "description": "The figure resulting from the adjustments made to the original declared",
+                                        "captured_how": "System generated / Manually Generated ",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "is_published": "Yes",
+                                    "published_date": "date"
+                                }
                             },
                             "assessments": {
+                                "title": "NDR Assessment Data",
+                                "POMI_table_version": "V0.3.0",
+                                "description": "19 variable table, each record details an NDR Assessment. Not all assessments will be current assessments, the assessment status indicator details this as at the point the data was pulled. Table constrained to 2010 and 2017 list years",
+                                "tags": "curated from CDB data table - NDR_ASSESSMENTS",
+                                "data_owner": "table creator being used as place holder olanrewaju.adeyemi@voa.gsi.gov.uk",
+                                "data_authorisers": "contact email addresses of DO nominated authorisers",
+                                "location": "/zones/reading/coda/assessments.parquet",
+                                "provenance": "table maintained by an SQL Stored Procedure which is pulled from POMI_DATA to CODA",
+                                "provenance_link": "R:\\I&A\\2. Work\\POMI\\PROD\\ASSESSMENTS.sql",
+                                "update_type": "Daily",
+                                "supported": "Currently in support",
+                                "data_items": {
+                                    "assessment_id": {
+                                        "data_item_title": "Assessment reference number",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "A unique ID number generated for the NDR Assessment",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "UARN": {
+                                        "data_item_title": "Unique Address Reference Number",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "Unique Address Reference Number generated at the point of CDB new address creation",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "billing_auth_id": {
+                                        "data_item_title": "Code assigned to a Billing Authority",
+                                        "type": "string",
+                                        "format": "Four digits, can have a leading zero",
+                                        "description": "Each Billing Authority has a four digit code assigned to it. Can be referred to a DOE Code. Welsh BA codes all start with a 6",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "See billing_authority.parquet"
+                                    },
+                                    "valuation_id": {
+                                        "data_item_title": "Unique ID number",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "The unique ID that links NDR assessments, analysis, survey and valuation",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "originating_case_number": {
+                                        "data_item_title": "Originating Case Number ",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "Case number generated when the case is created. In this instance it is the case that originally created the assessment",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "list_year": {
+                                        "data_item_title": "The Rating List year associated with the assessment",
+                                        "type": "decimal(4,0)",
+                                        "format": "YYYY",
+                                        "description": "The Rating List year associated with the assessment",
+                                        "captured_how": "System Generated / Manually Captured",
+                                        "list_of_variables": [
+                                            "1995",
+                                            "2000",
+                                            "2005",
+                                            "2010",
+                                            "2017",
+                                            "2021"
+                                        ]
+                                    },
+                                    "adopted_rv": {
+                                        "data_item_title": "Ratable Value of the assessment adopted and associated to the assessment",
+                                        "type": "decimal(10,0)",
+                                        "format": "",
+                                        "description": "Ratable Value adopted and associated to the assessment",
+                                        "captured_how": "System Generated / Manually Captured",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "assessment_status": {
+                                        "data_item_title": "Assessment Status Indicator",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "Describes the status of the assessment alteration. Note * 2- Current includes assessments that have been deleted from the current list - 'Live Deletions'",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": [
+                                            "0 - Proposed Historic",
+                                            "1 - Proposed (New)",
+                                            "2 - Current",
+                                            "3 - Previously Current",
+                                            "4 - Historic Only"
+                                        ]
+                                    },
+                                    "change_reason_code": {
+                                        "data_item_title": "Code that details what change took place to the assessment",
+                                        "type": "string",
+                                        "format": "2 digit or NULL",
+                                        "description": "Code that details the kind of change that took place to an assessment. This can be Null where no changes have taken place on an assessment. Note: codes 08, 17, 26 and 28 are used for revaluation purposes only",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": [
+                                            "01 - Demolished",
+                                            "02 - Reconstituted",
+                                            "03 - Exempt from rating",
+                                            "04 - Ceased (to be relevant)",
+                                            "05 - Boundary change",
+                                            "06 - Address change and review",
+                                            "09 - Deletion - other",
+                                            "10 - New hereditament",
+                                            "11 - Reconstituted",
+                                            "12 - Ceased to be exempt",
+                                            "13 - Boundary change",
+                                            "14 - Address change and review",
+                                            "19 - New - other",
+                                            "20 - Alteration of non-deleted assessment",
+                                            "21 - Alteration of effective date",
+                                            "29 - Alteration - other",
+                                            "31 - Alteration of deleted assessment"
+                                        ]
+                                    },
+                                    "is_composite": {
+                                        "data_item_title": "Flag detailing if the assessment is composite",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "A flag indicating the presence of Domestic Use in an NDR Hereditament. This is one of the 8 components that must be shown in the Rating List",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": ""
+                                    },
+                                    "effective_date": {
+                                        "data_item_title": "Effective date of the assessment",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "The date from which a rate liability can be charged against the assessment",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "scat_code": {
+                                        "data_item_title": "Special Category Code",
+                                        "type": "string",
+                                        "format": "3 digit",
+                                        "description": "A system of coding that groups properties according to the method of valuation used. A common misconception is that the SCat Code represents use of a property. Its purpose is to group properties according to the skills required to produce the list entry of which the valuation is a part.",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": [
+                                            "001 - AA/RAC Service Centres and Boxes",
+                                            "003 - Advertising Right",
+                                            "003 - Advertising Right",
+                                            "004 - Agricultural Showgrounds (National Scheme)",
+                                            "005 - Air Ports (Minor) (National Scheme)",
+                                            "006 - Air Strips (National Scheme)",
+                                            "007 - Aircraft Works With Airfields",
+                                            "008 - Airport Let Outs",
+                                            "009 - Aluminium Smelting Works",
+                                            "010 - Ambulance Stations",
+                                            "011 - Amusement Arcades",
+                                            "012 - Amusement Parks",
+                                            "013 - Animal Boarding",
+                                            "014 - Arenas",
+                                            "015 - Army Hereditaments",
+                                            "015 - Army Hereditaments",
+                                            "015 - Army Hereditaments",
+                                            "016 - Artificial Fibre Works",
+                                            "017 - Asphalt Plants",
+                                            "018 - ATMs",
+                                            "019 - Auction Rooms",
+                                            "020 - Baling Plants",
+                                            "021 - Banks/Insurance/Building Society Offices & Other A2 Uses",
+                                            "021 - Banks/Insurance/Building Society Offices & Other A2 Uses",
+                                            "021 - Banks/Insurance/Building Society Offices & Other A2 Uses",
+                                            "022 - Beach Huts",
+                                            "023 - Beet Sugar Factories",
+                                            "024 - Betting Offices",
+                                            "025 - Bingo Halls (National Scheme)",
+                                            "026 - Bird Sanctuaries",
+                                            "027 - Boat Yards",
+                                            "028 - Bowling Alleys",
+                                            "029 - Bowling Centres (Indoor)",
+                                            "030 - Bowling Greens (Outdoor)",
+                                            "031 - Breweries (National Scheme)",
+                                            "032 - Brickworks (Traditional), Clay Tile/Pipe Works",
+                                            "033 - Bulk Cement Storage Depots",
+                                            "034 - Bullion/Money Stores (National Scheme)",
+                                            "036 - Bus Stations",
+                                            "037 - Cable Head End Buildings",
+                                            "038 - Car Auction Buildings/Sites",
+                                            "039 - Car Parks (Multi-Storey)",
+                                            "040 - Car Parks (Surfaced Open)",
+                                            "041 - Car Parks (Unsurfaced Open)",
+                                            "042 - Car Showrooms",
+                                            "043 - Car Spaces",
+                                            "044 - Car Supermarkets",
+                                            "045 - Car Washes (Stand Alone)",
+                                            "046 - Car/Caravan Sales/Display/Hiring Sites",
+                                            "047 - Caravan Parks (Leisure) (National Scheme)",
+                                            "047 - Caravan Parks (Leisure) (National Scheme)",
+                                            "047 - Caravan Parks (Leisure) (National Scheme)",
+                                            "048 - Caravan Sites and Pitches (National Scheme)",
+                                            "048 - Caravan Sites and Pitches (National Scheme)",
+                                            "048 - Caravan Sites and Pitches (National Scheme)",
+                                            "049 - Casinos and Gambling Clubs",
+                                            "050 - Cattle Breeding Centres",
+                                            "051 - Cement Tile Works",
+                                            "052 - Cement Works",
+                                            "053 - Cemeteries (National Scheme)",
+                                            "054 - Chalet Parks (National Scheme)",
+                                            "054 - Chalet Parks (National Scheme)",
+                                            "055 - Chemical Works",
+                                            "056 - Cinemas (National Scheme)",
+                                            "057 - Civic and Public Buildings (Local Authority Occupations)",
+                                            "057 - Civic and Public Buildings (Local Authority Occupations)",
+                                            "058 - Civic Amenity Sites",
+                                            "059 - Civil Airports",
+                                            "060 - Clubhouses",
+                                            "061 - Clubs & Institutions",
+                                            "062 - Coaching Inns",
+                                            "063 - Coking and Carbonising Plants",
+                                            "065 - Colleges of Further Education (National Scheme)",
+                                            "066 - Communication Stations (National Scheme)",
+                                            "067 - Community Day Centres",
+                                            "068 - Computer Centres (Non-Purpose Built)",
+                                            "069 - Computer Centres (Purpose Built)",
+                                            "070 - Concert Halls (National Scheme)",
+                                            "074 - Conference & Exhibition Centres",
+                                            "075 - Conference Centres in Country Houses",
+                                            "076 - Contractors Huts & Compounds",
+                                            "077 - Country House Hotels",
+                                            "079 - Creameries",
+                                            "080 - Crematoria (With & Without Cemeteries) (National Scheme)",
+                                            "081 - Cricket Centres",
+                                            "082 - Cricket Grounds (County)",
+                                            "083 - Cricket Grounds/Pitches (Non-County)",
+                                            "083 - Cricket Grounds/Pitches (Non-County)",
+                                            "084 - Dance Schools & Centres",
+                                            "085 - Day Nurseries/Play Schools",
+                                            "086 - Departmental and Walk Round Stores (Large)",
+                                            "087 - Distilleries",
+                                            "088 - District Heating Undertakings & Networks",
+                                            "089 - Docks and Harbours (Non-Statutory)",
+                                            "089 - Docks and Harbours (Non-Statutory)",
+                                            "090 - Domestic Fuel Installations",
+                                            "091 - Drive-In Restaurants",
+                                            "092 - Drive-Thru Restaurants",
+                                            "093 - Effluent Minewater Treatment Plant and Premises",
+                                            "094 - Electricity Undertakings (Non-Statutory)",
+                                            "095 - Exhaust and Tyre Centres",
+                                            "096 - Factories, Workshops and Warehouses (Incl Bakeries & Dairies)",
+                                            "096 - Factories, Workshops and Warehouses (Incl Bakeries & Dairies)",
+                                            "096 - Factories, Workshops and Warehouses (Incl Bakeries & Dairies)",
+                                            "097 - Factory Shops",
+                                            "098 - Farm Shops",
+                                            "099 - Field Study, Activity and Adventure Centres",
+                                            "100 - Film and TV Studios",
+                                            "101 - Fire Stations",
+                                            "102 - Fish Farms",
+                                            "103 - Flour Mills (National Scheme)",
+                                            "104 - Food Courts",
+                                            "105 - Food Processing Centres",
+                                            "106 - Food Stores",
+                                            "107 - Football Grounds",
+                                            "107 - Football Grounds",
+                                            "108 - Football Pitches",
+                                            "108 - Football Pitches",
+                                            "109 - Football Stadia",
+                                            "110 - Foundries",
+                                            "111 - Funeral Parlours/Chapels Of Rest",
+                                            "112 - Game Farms",
+                                            "113 - Garages (Transport and Commercial)",
+                                            "114 - Garden Centres",
+                                            "115 - Gas Processing Plants",
+                                            "116 - Go Kart Rinks",
+                                            "117 - Golf Courses",
+                                            "118 - Golf Driving Ranges",
+                                            "119 - Grain Silos",
+                                            "120 - Granaries and Intervention Stores",
+                                            "121 - Greyhound Racetracks",
+                                            "122 - Guest & Boarding Houses",
+                                            "123 - Gypsy Camp Sites (Short Stay)",
+                                            "124 - Hatcheries/Poultry Farms",
+                                            "125 - Health Farms",
+                                            "126 - Heliports",
+                                            "127 - Heredits Used For Primary Treatment/Processing Of Minerals",
+                                            "128 - Heritage Railways",
+                                            "129 - High Tech Warehouses",
+                                            "130 - Holiday Centres",
+                                            "131 - Holiday Homes (Self Catering)",
+                                            "132 - Horse Racecourses",
+                                            "133 - Hospital Let Outs",
+                                            "134 - Hospitals & Clinics NHS (National Scheme)",
+                                            "135 - Hospitals & Clinics (Private) (National Scheme)",
+                                            "136 - Hostels",
+                                            "137 - Hotels (3 Star And Under)",
+                                            "138 - Hotels (4 Star & Above) & Major Chain Operated ( includes 3* & above consortium hotels)",
+                                            "139 - Hypermarkets/Superstores (over 2500m²)",
+                                            "139 - Hypermarkets/Superstores (over 2500m²)",
+                                            "140 - Ice Rinks",
+                                            "141 - Interactive Telephone Kiosks",
+                                            "142 - Iron and/or Steel Works",
+                                            "143 - Kennels and Catteries",
+                                            "144 - Laboratories",
+                                            "145 - Lakes With Water Sport Facilities",
+                                            "146 - Land Used For Advertising",
+                                            "146 - Land Used For Advertising",
+                                            "147 - Land Used For Car Boot Sales",
+                                            "148 - Land Used For Storage",
+                                            "149 - Landfill Gas Generator Sites",
+                                            "150 - Land used for Waste Composting",
+                                            "151 - Large Distribution Warehouses",
+                                            "152 - Large Food Stores (750 - 2500m²)",
+                                            "153 - Large Industrials (Over 20,000m²)",
+                                            "153 - Large Industrials (Over 20,000m²)",
+                                            "153 - Large Industrials (Over 20,000m²)",
+                                            "154 - Large Shops (750 - 1850m²)",
+                                            "155 - Large Shops (Over 1850m²)",
+                                            "156 - Libraries",
+                                            "157 - Liquid Bulk Storage (Incl Petrol & Oil) (National Scheme)",
+                                            "158 - Livestock Markets (National Scheme)",
+                                            "158 - Livestock Markets (National Scheme)",
+                                            "159 - Local Authority Schools (National Scheme)",
+                                            "160 - Lodges (National Scheme)",
+                                            "161 - Lorry Parks",
+                                            "161 - Lorry Parks",
+                                            "162 - Maltings - Non Trad",
+                                            "163 - Maltings - Trad",
+                                            "164 - Marinas (National Scheme)",
+                                            "165 - Markets (Other Than Livestock)",
+                                            "165 - Markets (Other Than Livestock)",
+                                            "166 - Mineral Depot and Premises",
+                                            "167 - Mineral Producing Hereditament - Blockstone",
+                                            "168 - Mineral Producing Hereditament - Brine",
+                                            "168 - Mineral Producing Hereditament - Brine",
+                                            "169 - Mineral Producing Hereditament - Chalk",
+                                            "170 - Mineral Producing Hereditament - China Clay",
+                                            "171 - Mineral Producing Hereditament - Clay",
+                                            "172 - Mineral Producing Hereditament - Coal",
+                                            "172 - Mineral Producing Hereditament - Coal",
+                                            "173 - Mineral Producing Hereditament - Fluorspar",
+                                            "174 - Mineral Producing Hereditament - Gas",
+                                            "175 - Mineral Producing Hereditament - Hardrock",
+                                            "176 - Mineral Producing Hereditament - Inert",
+                                            "177 - Mineral Producing Hereditament - Oil",
+                                            "178 - Mineral Producing Hereditament - Other Mineral Category",
+                                            "179 - Mineral Producing Hereditament - Putrescible",
+                                            "180 - Mineral Producing Hereditament - Sand and Gravel",
+                                            "181 - Mineral Producing Hereditament - Sand",
+                                            "182 - Mineral Producing Hereditament - Shale Unburnt",
+                                            "183 - Mineral Producing Hereditament - Slate",
+                                            "184 - Mineral Producing Hereditament With Batching Plant",
+                                            "185 - Mineral Producing Hereditament With Coating Plant",
+                                            "186 - Mineral Producing Hereditament With Tunnel Kiln",
+                                            "187 - MOD Hereditaments",
+                                            "187 - MOD Hereditaments",
+                                            "187 - MOD Hereditaments",
+                                            "188 - Model Villages",
+                                            "189 - Moorings (Floating Hereditaments)",
+                                            "190 - Mortuaries",
+                                            "191 - Motor Racetracks",
+                                            "192 - Motor Vehicle Works",
+                                            "193 - Motorway Service Area Let Outs",
+                                            "194 - Motorway and Major Road Service Areas",
+                                            "195 - Museums and Art Galleries (Contractors)",
+                                            "196 - Museums and Art Galleries (Non-Contractors)",
+                                            "197 - Navy Hereditaments",
+                                            "197 - Navy Hereditaments",
+                                            "197 - Navy Hereditaments",
+                                            "198 - Newspaper Printing Works (National Scheme)",
+                                            "199 - Night Clubs & Discotheques",
+                                            "200 - Nuclear Establishments",
+                                            "201 - Nursing Homes (Inc. Old Peoples Homes)",
+                                            "202 - Observatories",
+                                            "203 - Offices (Inc Computer Centres)",
+                                            "203 - Offices (Inc Computer Centres)",
+                                            "204 - Offices (Headquarters/Institutional)",
+                                            "205 - Oil Refineries",
+                                            "206 - Oxbridge Colleges",
+                                            "207 - Paper Mills",
+                                            "208 - Pavilions",
+                                            "209 - Petrol Filling Stations (National Scheme)",
+                                            "210 - Pharmacies",
+                                            "210 - Pharmacies",
+                                            "211 - Photographic Booths",
+                                            "212 - Pipelines",
+                                            "213 - Pleasure Piers",
+                                            "214 - Point to Point and Eventing Courses",
+                                            "215 - Police Stations",
+                                            "216 - Polo Grounds",
+                                            "217 - Post Office Sorting Centres",
+                                            "218 - Potteries",
+                                            "219 - Power Generators",
+                                            "220 - Prison Service Hereditaments",
+                                            "221 - Property used for Secondary Aggregate Processing",
+                                            "221 - Property used for Secondary Aggregate Processing",
+                                            "222 - Provender Mills (National Scheme)",
+                                            "223 - Public and Independent Schools (National Scheme)",
+                                            "224 - Public Conveniences (National Scheme)",
+                                            "225 - Public Halls",
+                                            "226 - Public Houses/Pub Restaurants (National Scheme)",
+                                            "227 - Public Houses/Pub Restaurants (Inc. Lodge) (National Scheme)",
+                                            "228 - Public Telephone Kiosks (National Scheme)",
+                                            "229 - Racing Stables (National Scheme)",
+                                            "230 - RAF Hereditaments",
+                                            "230 - RAF Hereditaments",
+                                            "230 - RAF Hereditaments",
+                                            "231 - Railways & Tramways (Non Leisure)",
+                                            "232 - Recording Studios",
+                                            "233 - Refuse Destructor Plants/Disposal Sites",
+                                            "234 - Restaurants",
+                                            "235 - Retail Warehouses and Foodstores",
+                                            "235 - Retail Warehouses and Foodstores",
+                                            "235 - Retail Warehouses and Foodstores",
+                                            "236 - Riding Schools & Livery Stables (National Scheme)",
+                                            "237 - Rifle and Weapons Ranges",
+                                            "238 - Roadside Restaurants (National Scheme)",
+                                            "239 - Roller Skating Rinks",
+                                            "240 - Royal Palaces",
+                                            "241 - Rugby League Grounds",
+                                            "242 - Rugby Union Grounds",
+                                            "243 - Sales Kiosks",
+                                            "244 - Scrap Metal/Breakers Yard",
+                                            "245 - Sea Dredged Aggregate Processing Plants & Depots",
+                                            "246 - Sewage Works (National Scheme)",
+                                            "247 - Ship Building Yards",
+                                            "248 - Ship Repair Yards",
+                                            "249 - Shops",
+                                            "249 - Shops",
+                                            "250 - Showhouses (National Scheme)",
+                                            "251 - Showrooms",
+                                            "252 - Ski Centres",
+                                            "253 - Snooker Halls/Clubs",
+                                            "254 - Speedway Racetracks",
+                                            "255 - Spoil Heap Workings",
+                                            "257 - Sports & Leisure Centres (LA) (Dry Only) (National Scheme)",
+                                            "257 - Sports & Leisure Centres (LA) (Dry Only) (National Scheme)",
+                                            "258 - Sports & Leisure Centres (LA) (Wet & Dry) (National Scheme)",
+                                            "258 - Sports & Leisure Centres (LA) (Wet & Dry) (National Scheme)",
+                                            "259 - Sports & Leisure Centres (Private)(Dry Only)",
+                                            "259 - Sports & Leisure Centres (Private)(Dry Only)",
+                                            "260 - Sports & Leisure Centres (Private)(Wet & Dry)",
+                                            "260 - Sports & Leisure Centres (Private)(Wet & Dry)",
+                                            "261 - Sports Grounds",
+                                            "262 - Sports Stadia",
+                                            "263 - Squash Courts",
+                                            "264 - Stables and Loose Boxes",
+                                            "265 - Stately Homes & Historic Houses (National Scheme)",
+                                            "266 - Station Let Outs",
+                                            "267 - Storage Depots",
+                                            "268 - Stores",
+                                            "269 - Stud Farms",
+                                            "270 - Studios",
+                                            "272 - Swimming Pools (Local Authority)",
+                                            "273 - Swimming Pools (Private)",
+                                            "274 - Tanneries",
+                                            "275 - Telecommunications Cable Networks (National Scheme)",
+                                            "276 - Telecommunications Switching Centres",
+                                            "277 - Tennis Centres",
+                                            "278 - Tennis Courts/Clubs",
+                                            "279 - Theatres (National Scheme)",
+                                            "280 - Theme Parks",
+                                            "281 - Timeshare Complexes (National Scheme)",
+                                            "282 - Tolls (Ferries, Roads And Bridges)",
+                                            "283 - Totalisators On Horse Racecourses",
+                                            "284 - Tourist Attractions/Dark Rides",
+                                            "285 - Training Centre (Non Residential)",
+                                            "286 - Training Centre (Residential)",
+                                            "287 - Truck Stops",
+                                            "288 - Universities (Excluding Oxbridge) (National Scheme)",
+                                            "289 - Vehicle Repair Workshops & Garages",
+                                            "290 - Vehicle Testing Centres (With Test Tracks)",
+                                            "291 - Vehicle Testing Centres (Without Test Tracks)",
+                                            "292 - Veterinary Clinics / Animal Clinics",
+                                            "293 - Village Halls, Scout Huts, Cadet Huts Etc",
+                                            "294 - Vineyards/Wineries",
+                                            "295 - Wafer Fabrications (National Scheme)",
+                                            "296 - War Games Courses/Misc Ag. Use",
+                                            "297 - Waste Incinerator Plants",
+                                            "298 - Waste Recycling Plants",
+                                            "299 - Waste Transfer Stations",
+                                            "300 - Water Undertakings (Non-Statutory)",
+                                            "301 - Wholesale Warehouses",
+                                            "302 - Windmills",
+                                            "302 - Windmills",
+                                            "303 - Bars (Valued on Floor Space)",
+                                            "304 - Zoos & Safari Parks",
+                                            "400 - Abattoirs & Slaughter Houses (Contractors Valuation)",
+                                            "401 - Abattoirs & Slaughter Houses (Rental Valuation)",
+                                            "402 - Agricultural Research Centres",
+                                            "403 - Aquaria",
+                                            "404 - Archives",
+                                            "405 - Boathouses",
+                                            "406 - Bus Garages (Contractors Valuation)",
+                                            "407 - Bus Garages (Rental Valuation)",
+                                            "408 - Business Units",
+                                            "409 - Cafes",
+                                            "410 - Changing Rooms",
+                                            "411 - Coastguard Stations",
+                                            "412 - Cold Stores (Contractors Valuation)",
+                                            "413 - Cold Stores (Rental Valuation)",
+                                            "414 - Courts (Contractors Valuation)",
+                                            "415 - Courts (Rental Valuation)",
+                                            "416 - Gymnasia/Fitness Suites",
+                                            "417 - Hairdressing/Beauty Salons",
+                                            "418 - Information/Visitor Centres",
+                                            "419 - Land Used for Display",
+                                            "420 - Lifeboat Stations",
+                                            "421 - Miniature Railways",
+                                            "422 - Pack Houses",
+                                            "423 - Peat Fields",
+                                            "424 - Pet Grooming Parlours",
+                                            "425 - Pharmacies Within/Adjacent to Surgery/Health Centre",
+                                            "425 - Pharmacies Within/Adjacent to Surgery/Health Centre",
+                                            "426 - Pitch and Putt/Putting Greens",
+                                            "427 - Pitches for Stalls, Sales or Promotions",
+                                            "428 - Police Training Colleges",
+                                            "429 - Post Offices",
+                                            "430 - Pumping Mines",
+                                            "431 - Religious Retreats/Study Centres (Residential)",
+                                            "432 - Sales Offices",
+                                            "433 - Statutory Docks and Harbours (Formula)",
+                                            "434 - Statutory Docks and Harbours (Non-Formula, Prescribed)",
+                                            "434 - Statutory Docks and Harbours (Non-Formula, Prescribed)",
+                                            "435 - Statutory Docks and Harbours (Other)",
+                                            "435 - Statutory Docks and Harbours (Other)",
+                                            "436 - Surgeries, Clinics, Health Centres (Contractors Valuation)",
+                                            "436 - Surgeries, Clinics, Health Centres (Contractors Valuation)",
+                                            "437 - Surgeries, Clinics, Health Centres (Rental Valuation)",
+                                            "437 - Surgeries, Clinics, Health Centres (Rental Valuation)",
+                                            "438 - Telescope Sites",
+                                            "439 - University - Ancillary Land or Buildings",
+                                            "440 - University Occupation Within Hospitals",
+                                            "440 - University Occupation Within Hospitals",
+                                            "441 - Weighbridges",
+                                            "442 - Takeaway Food Outlet (Predominantly Off Premises)",
+                                            "500 - Cafes/Restaurants Within/Part of Specialist Property",
+                                            "500 - Cafes/Restaurants Within/Part of Specialist Property",
+                                            "501 - Car Parking Within/Part of Specialist Property",
+                                            "501 - Car Parking Within/Part of Specialist Property",
+                                            "502 - Garages Within/Part of Specialist Property",
+                                            "503 - Gymnasia/Fitness Suites Within/Part of Specialist Property",
+                                            "504 - Kiosks Within/Part of Specialist Property",
+                                            "505 - Nurseries/Creches Within/Part of Specialist Property",
+                                            "506 - Offices Within/Part of Specialist Property",
+                                            "506 - Offices Within/Part of Specialist Property",
+                                            "507 - Salons/Clinics Within/Part of Specialist Property",
+                                            "508 - Shops Within/Part of Specialist Property",
+                                            "509 - Sports & Leisure Centres Within/Part of Specialist Property",
+                                            "509 - Sports & Leisure Centres Within/Part of Specialist Property",
+                                            "510 - Stores Within/Part of Specialist Property",
+                                            "511 - Warehouses Within/Part of Specialist Property",
+                                            "512 - Workshops Within/Part of Specialist Property",
+                                            "513 - Miscellaneous Within/Part of Specialist Property",
+                                            "737 - Ferry Terminal",
+                                            "741 - Independent Gas Transporter (IGT)",
+                                            "742 - Independent Distribution Network Operators (IDNOs)",
+                                            "743 - Renewable Power Generators - Photovoltaic",
+                                            "744 - Renewable Power Generators - Wind",
+                                            "745 - Renewable Power Generators - Other",
+                                            "746 - Renewable Power Generators - Other",
+                                            "747 - Fossil Fuel Power Stations",
+                                            "748 - Nuclear Power Stations",
+                                            "757 - Plant Nurseries ",
+                                            "992 - Commercial Miscellaneous",
+                                            "993 - Leisure Miscellaneous",
+                                            "994 - Industrial Miscellaneous",
+                                            "995 - Educational Miscellaneous",
+                                            "996 - Formula Assessed Miscellaneous",
+                                            "996 - Formula Assessed Miscellaneous",
+                                            "997 - Minerals Miscellaneous",
+                                            "998 - Crown Miscellaneous",
+                                            "999 - Miscellaneous"
+                                        ]
+                                    },
+                                    "scat_ind": {
+                                        "data_item_title": "Special Category Indicator ",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "Code that indicates the type of specialist competence required to produce the Rating List entry for the hereditament. The SCat Suffix does not currently directly reflect the Specialist Team structure.",
+                                        "captured_how": "Manually Captured",
+                                        "list_of_variables": [
+                                            "G - Group/Unit",
+                                            "S - Specialist"
+                                        ]
+                                    },
+                                    "primary_desc": {
+                                        "data_item_title": "Primary description code",
+                                        "type": "string",
+                                        "format": "Four digit",
+                                        "description": "A code that generates a default description to form part of the entry in the Rating List. Can be amended to more closely represent the actual use",
+                                        "list_of_variables": "For full list of values see (put lookup table name here)"
+                                    },
+                                    "secondary_desc": {
+                                        "data_item_title": "Secondary description code",
+                                        "type": "string",
+                                        "format": "Four digit",
+                                        "description": "Indicates that a hereditament valuation is made up of more than one valuation approach",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": "For full list of values see (put lookup table name here)"
+                                    },
+                                    "non_standard_desc": {
+                                        "data_item_title": "Non-standard description",
+                                        "type": "string",
+                                        "format": "Sixty digits",
+                                        "description": "Used when a standard description is over written or where it does not adequately describe the assessment",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "current_from_date": {
+                                        "data_item_title": "Date from when the entry became current",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date when the entry became current. Assists in identifying the sequence of alterations to the Rating List",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "current_to_date": {
+                                        "data_item_title": "Date from when the entry ceased to be current",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date from when the entry ceased to be current. Current entries will always have a Null. Assists in identifying the sequence of alterations to the Rating List",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "rl_updated_date": {
+                                        "data_item_title": "Rating List Update date",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date on which the Rating List was updated by the associated assessment",
+                                        "captured_how": "System",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "is_published": "Yes",
+                                    "published_date": "date"
+                                }
+                            },
+                            "analysed_rents": {
                                 "type": "dataset",
-                                "description": "Assessments of people in our organization",
-                                "data_owner": "Susan Knowitall"
+                                "title": "Analysed Rent Data",
+                                "POMI_table_version": "0.1.0",
+                                "description": "10 variable table containing rental analysis data. Table constrained to 2017 and 2021 analysis",
+                                "tags": [
+                                    "Analysed_Rents"
+                                ],
+                                "data_owner": "table creator being used as place holder olanrewaju.adeyemi@voa.gsi.gov.uk",
+                                "data_authorisers": "contact email addresses of DO nominated authorisers",
+                                "location": "/zones/reading/coda/analysed_rents.parquat",
+                                "provenance": "table maintained by an SQL Stored Procedure which is pulled from POMI_DATA to CODA",
+                                "provenance_link": "R:\\I&A\\2. Work\\POMI\\PROD\\ANALYSED_RENTS.sql",
+                                "update_type": "Daily",
+                                "supported": "Currently in support",
+                                "data_items": {
+                                    "analysed_rent_id": {
+                                        "data_item_title": "ID number associated with the analysis",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "ID number created when analysis work is undertaken on an FOR case",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "adjusted_rent_id": {
+                                        "data_item_title": "ID number associated with the adjustment work undertaken on an FOR case",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "ID number created when adjustment work is undertaken on an FOR case",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "valuation_id": {
+                                        "data_item_title": "Unique ID number",
+                                        "type": "decimal(11,0)",
+                                        "format": "",
+                                        "description": "The unique ID that links NDR assessments, analysis, survey and valuation",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "list_year": {
+                                        "data_item_title": "the Rating List year",
+                                        "type": "decimal(4,0)",
+                                        "format": "YYYY",
+                                        "description": "the Rating List year that the valuation relates to",
+                                        "captured_how": "System Generated and Manually Generated",
+                                        "list_of_variables": [
+                                            "1995",
+                                            "2000",
+                                            "2005",
+                                            "2010",
+                                            "2017",
+                                            "2021"
+                                        ]
+                                    },
+                                    "billing_auth_id": {
+                                        "data_item_title": "Code assigned to a Billing Authority",
+                                        "type": "string",
+                                        "format": "Four digit, can have a leading zero",
+                                        "description": "Each Billing Authority has a four digit code assigned to it. Can be referred to a DOE Code",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "See billing_authority.parquet"
+                                    },
+                                    "is_preferred": {
+                                        "data_item_title": "Flag detailing if the analysis is preferred or not",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "When an analysis is undertaken it can be flagged as the preferred adjustment. If there is only one set of analysis then it has to be declared as the preferred",
+                                        "captured_how": "Manually",
+                                        "list_of_variables": {
+                                            "Y": "Preferred Analysis",
+                                            "N": "Not Preferred"
+                                        },
+                                        "reliability_ind": {
+                                            "data_item_title": "Code detailing the reliability of the analysis",
+                                            "type": "string",
+                                            "format": "Single digit",
+                                            "description": "Reliability code placed against the analysis by either the CDB or the caseworker. Automated analysis is always set to 5",
+                                            "captured_how": "System Generated / Manually Captured",
+                                            "list_of_variables": {
+                                                "1": "Reliability very good - All rents requiring no alteration in analysis",
+                                                "2": "Reliability good - Any alterations for car parking, other additions or P & M only",
+                                                "3": "Reliability average - Any alteration involving End Adjustments from valuation",
+                                                "4": "Reliability below average - Any alteration involving additions/ exclusions of Line Entries in the survey",
+                                                "5": "Reliability poor - Any alteration involving adding/replacing blocks of Survey Data (or undertaken by Auto Analysis)"
+                                            }
+                                        },
+                                        "current_analysis_type": {
+                                            "data_item_title": "Code declaring the type of analysis undertaken",
+                                            "type": "string",
+                                            "format": "Single digit",
+                                            "description": "Code that show the type of analysis undertaken. Can be Null",
+                                            "captured_how": "System generated / Manually captured",
+                                            "list_of_variables": {
+                                                "A": "Auto Analysis Awaiting Review",
+                                                "M": "Manual Analysis Awaiting Review",
+                                                "N": "?",
+                                                "R": "Reviewed Analysis",
+                                                "Null": "Null"
+                                            }
+                                        },
+                                        "rent_amount": {
+                                            "data_item_title": "Amount of rent",
+                                            "type": "decimal(12,2)",
+                                            "format": "Up to 12 digits to two decimal places.",
+                                            "description": "The final analysed rent in £ms",
+                                            "captured_how": "System Generated / Manually Captured",
+                                            "list_of_variables": "Not applicable"
+                                        },
+                                        "total_area": {
+                                            "data_item_title": "Total area of the hereditament",
+                                            "type": "decimal(8,2)",
+                                            "format": "Up to 8 digits to two decimal places ",
+                                            "description": "The total floor area of the associated hereditament in M2",
+                                            "captured_how": "System Generated / Manually captured",
+                                            "list_of_variables": "Not Applicable"
+                                        },
+                                        "is_published": "Yes",
+                                        "published_date": "date"
+                                    }
+                                },
+                                "adjusted_rents": {
+                                    "type": "dataset",
+                                    "title": "NDR Adjusted Rental Data",
+                                    "POMI_table_version": "V0.1.0",
+                                    "description": "7 variable table detailing rental evidence that has been adjusted by the VOA. Table constrained to 2017 and 2021 list years",
+                                    "tags": "curated from CDB data table - ADJUSTED_RENTS",
+                                    "data_owner": "table creator being used as place holder olanrewaju.adeyemi@voa.gsi.gov.uk",
+                                    "data_authorisers": "contact email addresses of DO nominated authorisers",
+                                    "location": "/zones/reading/coda/adjusted_rents.parquet",
+                                    "provenance": "table maintained by an SQL Stored Procedure which pulls the data from POMI_DATA to CODA",
+                                    "provenance_link": "R:\\I&A\\2. Work\\POMI\\PROD\\ADJUSTED_RENTS.sql",
+                                    "update_type": "Daily",
+                                    "supported": "Currently in support",
+                                    "data_items": {
+                                        "adrno": {
+                                            "data_item_title": "Reference ID for the adjustments",
+                                            "type": "decimal(11,0)",
+                                            "format": "",
+                                            "description": "Reference ID for the adjustments that have been to the rental data",
+                                            "captured_how": "System Generated",
+                                            "list_of_variables": "Not appropriate"
+                                        },
+                                        "adrseqno": {
+                                            "data_item_title": "Sequence reference ID for the adjustments",
+                                            "type": "decimal(3,0)",
+                                            "format": "",
+                                            "description": "Sequence ID that enables the correct ordering of the adjustments made",
+                                            "captured_how": "System Generated",
+                                            "list_of_variables": "Not appropriate"
+                                        },
+                                        "for_id": {
+                                            "data_item_title": "Unique identification number for the Form Of Return",
+                                            "type": "decimal(11,0)",
+                                            "format": "",
+                                            "description": "Number given to an Form Of Return, essentially a case number, at the point of creation",
+                                            "captured_how": "System Generated",
+                                            "list_of_variables": "Not appropriate"
+                                        },
+                                        "list_year": {
+                                            "data_item_title": "The Rating List year that the adjustment relate to",
+                                            "type": "string",
+                                            "format": "YYYY",
+                                            "description": "Adjustment to a rent is undertaken for a specific Rating List, this can be for the current year (defence) or for an upcoming Reval year",
+                                            "captured_how": "System Generate / Manually Captured",
+                                            "list_of_variables": [
+                                                "1995",
+                                                "2000",
+                                                "2005",
+                                                "2010",
+                                                "2017",
+                                                "2021"
+                                            ]
+                                        },
+                                        "is_preferred": {
+                                            "data_item_title": "Flag detailing if the adjustment is preferred or not",
+                                            "type": "string",
+                                            "format": "Single character",
+                                            "description": "When an adjustment is undertaken it can be flagged as the preferred adjustment. If there is only one set of adjustments then it has to be declared as the preferred",
+                                            "captured_how": "Manually",
+                                            "list_of_variables": {
+                                                "Y": "Preferred Adjustment ",
+                                                "N": "Not Preferred"
+                                            }
+                                        },
+                                        "created_date": {
+                                            "data_item_title": "Date that the adjustment was created",
+                                            "type": "date",
+                                            "format": "YYYY-MM-DD",
+                                            "description": "Date when the adjustment was created on the system",
+                                            "captured_how": "System Generated",
+                                            "list_of_variables": "Not appropriate"
+                                        },
+                                        "adjusted_rent": {
+                                            "data_item_title": "The figure of the adjusted rent",
+                                            "type": "decimal(10,0)",
+                                            "format": "",
+                                            "description": "The figure resulting from the adjustments made to the original declared",
+                                            "captured_how": "System generated / Manually Generated ",
+                                            "list_of_variables": "Not appropriate"
+                                        },
+                                        "is_published": "Yes",
+                                        "published_date": "date"
+                                    }
+                                }
                             }
+
                         }
                     },
-                    "property": {
+                    "ct": {
                         "type": "folder",
                         "children": {
-                            "addresses": {
+                            "ct_activities": {
                                 "type": "dataset",
-                                "description": "Addresses.. What else do you wanna know",
-                                "data_owner": "Jack Failedwhentried"
+                                "title": "Council Tax activity data",
+                                "POMI_Table_version": "0.9.0",
+                                "description": "10 variable table containing Council Tax activity data",
+                                "tags": [
+                                    "CT_ACTIVS",
+                                    "STF",
+                                    "STOAT_LINKS"
+                                ],
+                                "data_owner": "table creator being used as place holder ross.bowen@voa.gsi.gov.uk",
+                                "data_authorisers": "contact email addresses of DO nominated authorisers",
+                                "location": "/zones/reading/coda/ct_activities.parquat",
+                                "provenance": "table maintained by an SQL Stored Procedure which is pulled from POMI_DATA to CODA",
+                                "provenance_link": "R:\\I&A\\2. Work\\POMI\\PROD\\CT_ACTIVITIES",
+                                "update_type": "Daily",
+                                "supported": "Currently in support",
+                                "data_items": {
+                                    "case_id": {
+                                        "data_item_title": "Council Tax Case or Report number",
+                                        "type": "string",
+                                        "format": "Up to 20 digit unique ID",
+                                        "description": "Unique ID number created from merging report type & case/report & doecode as appropriate",
+                                        "captured_how": "System Generated / Manually Captured",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "activity_code": {
+                                        "data_item_title": "Code detailing the activity type undertaken on the associated case",
+                                        "type": "string",
+                                        "format": "3 digit code",
+                                        "description": "predefined codes that added to the case, sometimes automatically sometimes manually, when that activity has been undertaken",
+                                        "captured_how": "System Generated / Manually captured",
+                                        "list_of_variables": {
+                                            "11": "Acknowledgement Letter(s)",
+                                            "12": "VO 7851 Proposal Acknowledged (excl. Programme details)",
+                                            "13": "VO 7853 Notification of Programme details.",
+                                            "14": "VO 7852 Proposal Acknowledged (inc. Programme details).",
+                                            "15": "Converted from Pending",
+                                            "16": "Commencement date removed",
+                                            "17": "Bulk Report Amendment",
+                                            "18": "Work Prepared",
+                                            "20": "Date of first contact with maker of proposal",
+                                            "22": "Inspected - confirmed and fully checked",
+                                            "24": "Inspected - some detail checked",
+                                            "25": "Not Inspected - Facts acquired from BA/Other ext source",
+                                            "26": "Inspected - not checked",
+                                            "27": "Not Inspected - actioned from questionnaire",
+                                            "28": "Not Inspected - actioned from core records / plans",
+                                            "29": "Pending COT report - details reviewed for R2007",
+                                            "40": "Date formal offer made",
+                                            "43": "WIA Completed",
+                                            "50": "Date factual basis of case agreed",
+                                            "61": "VO 7855 Change to Sub Programme.",
+                                            "64": "VO 7854 Change to Sub Programme Start/Target Dates.",
+                                            "71": "VO 7856 Programming Opening Letter sent.",
+                                            "75": "Appeal cleared by VT",
+                                            "80": "Provisional Band Created",
+                                            "88": "Report Cleared",
+                                            "89": "Report Uncleared",
+                                            "90": "Date of inspection",
+                                            "91": "Consent Notice issued by VT",
+                                            "93": "Appeal Dismissed by VT (Unattended)",
+                                            "95": "Appeal Dismissed by VT",
+                                            "98": "Withdrawal Notice issued by VT",
+                                            "99": "Appeal Struck Out by VT",
+                                            "05": "Created by Auto LOR"
+                                        }
+                                    },
+                                    "activity_start_date": {
+                                        "data_item_title": "Date that was declared as when the activity started",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date that was declared as when the activity started. Some Activity Codes are automated -being triggered by activity that generates the code being carried out on the CDB case. Activity Codes that are manually captured have the potential to be circa 30% inaccurate",
+                                        "captured_how": "System Generated / Manually captured",
+                                        "list_of_variables": "Not Applicable"
+                                    },
+                                    "activity_end_date": {
+                                        "data_item_title": "Date that was declared as when the activity finished",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date that was declared as when the activity finished. Some Activity Codes are automated -being triggered by activity that generates the code being carried out on the CDB case. Activity Codes that are manually captured have the potential to be circa 30% inaccurate. End dates can often be left Null",
+                                        "captured_how": "System Generated / Manually captured",
+                                        "list_of_variables": "Not Applicable"
+                                    },
+                                    "cdb_login": {
+                                        "data_item_title": "The login of the member of staff who undertook the activity",
+                                        "type": "string",
+                                        "format": "Up to 7 alpha/numeric digits",
+                                        "description": "Details the CDB user associated to the activity",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "staff_name": {
+                                        "data_item_title": "Staff name associated with the CDB login ",
+                                        "type": "string",
+                                        "format": "Up to 28 digits",
+                                        "description": "The name of the staff member associated with the CDB login",
+                                        "captured_how": "Manually created",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "team_id": {
+                                        "data_item_title": "Unique ID for a Team",
+                                        "type": "string",
+                                        "format": "Up to 7 alpha/numeric digits",
+                                        "description": "Unique ID for a Team. Often referred to by Operational staff a Team Reference ",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not Applicable"
+                                    },
+                                    "sub_unit": {
+                                        "data_item_title": "Team name",
+                                        "type": "string",
+                                        "format": "Up to 50 digits",
+                                        "description": "Human name of the team associated to and derived from the team_id. These can cover a single team_ID or multiple team_id's",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not Applicable"
+                                    },
+                                    "unit": {
+                                        "data_item_title": "Name of the unit in which the team sits",
+                                        "type": "string",
+                                        "format": "Up to 25 digits",
+                                        "description": "Name of the organisational Unit in which the team sits. Derived from the team_id",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "is_published": "Yes",
+                                    "published_date": "date"
+                                }
+                            },
+                            "ct_proposals_and_appeals": {
+                                "type": "dataset",
+                                "title": "Council Tax Proposal and Appeal data",
+                                "POMI_table_version": "1.2.0",
+                                "description": "30 variable table containing Council Tax proposal and appeal data",
+                                "tags": [
+                                    "CT_ACTIVS",
+                                    "STF",
+                                    "CT_CASES"
+                                ],
+                                "data_owner": "table creator being used as place holder ross.bowen@voa.gsi.gov.uk",
+                                "data_authorisers": "contact email addresses of DO nominated authorisers",
+                                "location": "/zones/reading/coda/ct_appeals.parquat",
+                                "provenance": "table maintained by an SQL Stored Procedure which is pulled from POMI_DATA to CODA",
+                                "provenance_link": "R:\\I&A\\2. Work\\POMI\\PROD\\CT_APPEALS",
+                                "update_type": "Daily",
+                                "supported": "Currently in support",
+                                "data_items": {
+                                    "case_id": {
+                                        "data_item_title": "Council Tax ID",
+                                        "type": "string",
+                                        "format": "11 digit",
+                                        "description": "Unique ID for a Council Tax",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not appropriate"
+                                    },
+                                    "billing_auth_id": {
+                                        "data_item_title": "Code assigned to a Billing Authority",
+                                        "type": "string",
+                                        "format": "Four digit, can have a leading zero. Welsh BAs start with a 6",
+                                        "description": "Each Billing Authority has a four digit code assigned to it. Can be referred to a DOE Code",
+                                        "captured_how": "System Generated",
+                                        "list_of_variables": "See billing_authority.parquet"
+                                    },
+                                    "list_year": {
+                                        "data_item_title": "The Council Tax List year associated with the Banding",
+                                        "type": "decimal(4,0)",
+                                        "format": "YYYY",
+                                        "description": "The Council Tax List year associated with the Banding. 1993 relates to England & Wales, 2015 relates to Wales only",
+                                        "captured_how": "System Generated / Manually Captured",
+                                        "list_of_variables": [
+                                            "1993",
+                                            "2015"
+                                        ]
+                                    },
+                                    "is_settled": {
+                                        "data_item_title": "Settled flag",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "Flag detailing the state of the case in terms of Settlement",
+                                        "captured_how": "Derived from Cleared and settled dates not being Null",
+                                        "list_of_variables": {
+                                            "Y": "Settled",
+                                            "N": "Not Settled"
+                                        }
+                                    },
+                                    "is_cleared": {
+                                        "data_item_title": "Cleared flag",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "Flag detailing the state of the case in terms of Clearance",
+                                        "captured_how": "Derived from Cleared date not being Null",
+                                        "list_of_variables": {
+                                            "Y": "Settled",
+                                            "N": "Not Settled"
+                                        }
+                                    },
+                                    "appeal_ind": {
+                                        "data_item_title": "A flag representing the CDB case type",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "A single digit representing the CDB case type that is assigned on registration of the Council Tax case. New values were introduced on the CDB for CT Proposals when 'Appeals Direct' (AD) was introduced in England on 1st April 2009. Since that date CT Proposals in Wales have continued to use the codes that existed prior to 'Appeals Direct'",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": {
+                                            "A": "Appeal (AD)",
+                                            "I": "Invalid Proposal",
+                                            "P": "Proposal (AD)",
+                                            "N": "Invalid Proposal (AD)",
+                                            "V": "Valid but not well founded",
+                                            "W": "Well founded"
+                                        }
+                                    },
+                                    "code_of_grounds": {
+                                        "data_item_title": "Grounds on which the proposal or appeal was lodged",
+                                        "type": "string",
+                                        "format": "4 digit",
+                                        "description": "Grounds as set out in the legislation on which an interested person can seek to amend the list",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": {
+                                            "AD01": "Proposal against list entry - new taxpayer",
+                                            "AD02": "Proposal against list entry - works carried out",
+                                            "AD03": "Proposal against list entry - change to physical state of locality",
+                                            "AD04": "Proposal against a VT/HC decision",
+                                            "AD05": "Proposal to insert a new list entry",
+                                            "AD06": "Proposal to delete an entry",
+                                            "AD07": "Proposal challenging LON - incorrect list entry",
+                                            "AD08": "Proposal challenging LON - incorrect effective date ",
+                                            "CA01": "Actual proposal/incorrect assessment",
+                                            "CA02": "Actual proposal/Incorrect assessment + material change",
+                                            "CA03": "Actual proposal/Incorrect assessment + incorrect effective date",
+                                            "CA04": "Actual proposal/Incorrect assessment + change of occupier",
+                                            "CA05": "Actual proposal/Material change",
+                                            "CA06": "Actual proposal/Material change + incorrect assessment",
+                                            "CA07": "Actual proposal/Material change + incorrect effective date",
+                                            "CA08": "Actual proposal/Material change and change of occupier",
+                                            "CA09": "Actual proposal/Incorrect effective date",
+                                            "CA10": "Actual proposal/Incorrect effective date + incorrect assessment",
+                                            "CA11": "Actual proposal/Incorrect effective date + material change ",
+                                            "CA12": "Actual proposal/Incorrect effective date + change of occupier",
+                                            "CA13": "Actual proposal resulting from a decision by the VT ",
+                                            "CA14": "Actual proposal resulting from a decision by HC ",
+                                            "CA20": "Actual proposal to insert a new entry",
+                                            "CA30": "Actual proposal to delete an entry",
+                                            "CP01": "Actual proposal challenging LO notice/incorrect assessment",
+                                            "CP02": "Actual proposal challenging LO notice/Incorrect assessment + material change",
+                                            "CP03": "Actual proposal challenging LO notice/Incorrect assessment + incorrect effective date",
+                                            "CP04": "Actual proposal challenging LO notice/material change",
+                                            "CP05": "Actual proposal challenging LO notice/material change + incorrect assessment",
+                                            "CP06": "Actual proposal challenging LO notice/material change + incorrect effective date ",
+                                            "CP07": "Actual proposal challenging LO notice/incorrect effective date",
+                                            "CP08": "Actual proposal challenging LO notice/incorrect effective date + incorrect assessment",
+                                            "CP09": "Actual proposal challenging LO notice/incorrect effective date + material change"
+                                        }
+                                    },
+                                    "decision_code": {
+                                        "data_item_title": "Code that details the caseworkers decision",
+                                        "type": "string",
+                                        "format": "3 digit",
+                                        "description": "A coded reason signifying the reason for the caseworkers decision. Effective only from the advent of 'Appeals Direct' in 2009",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": {
+                                            "3": "Matters Don't Affect Value Sufficiently - Decision: NO CHANGE",
+                                            "4": "Paying Too Much - Decision: NO CHANGE",
+                                            "13": "Other Reason",
+                                            "1a": "Banding Too High - Decision: NO CHANGE",
+                                            "1b": "Banding Too High - Decision: REDUCE",
+                                            "2a": "Changes to the physical state of the dwelling's locality - Decision: NO CHANGE",
+                                            "2b": "Changes to the physical state of the dwelling's locality - Decision: REDUCE",
+                                            "5a": "Dispute Recent Notice - Decision: NO CHANGE",
+                                            "5b": "Dispute Recent Notice - Decision: REDUCE",
+                                            "6a": "Dispute Recent Notice Effective Date - Decision: NO CHANGE",
+                                            "6b": "Dispute Recent Notice Effective Date - Decision: AMEND DATE",
+                                            "7a": "Disrepair - Decision: NO CHANGE",
+                                            "7b": "Disrepair - Decision: REDUCE",
+                                            "8a": "Disaggregation - Decision: NO CHANGE",
+                                            "8b": "Disaggregation - Decision: SEPARATE S/C UNITS",
+                                            "9a": "Deletion of Entry - Decision: NO CHANGE",
+                                            "9b": "Deletion of Entry - Decision: DELETE",
+                                            "9c": "Insertion of Entry - Decision: INSERT",
+                                            "9d": "Insertion of Entry - Decision: NO CHANGE",
+                                            "10a": "Split/Merger - Decision: NO CHANGE",
+                                            "10b": "Split/Merger - Decision: AMEND",
+                                            "11a": "Composite - Decision: NO CHANGE",
+                                            "11b": "Composite - Decision: AMEND",
+                                            "12a": "VT/HC - Decision: NO CHANGE",
+                                            "12b": "VT/HC - Decision: AMEND",
+                                            "i1": "Maker of proposal first became the taxpayer more than 6 months ago",
+                                            "i2": "There has not been a material reduction",
+                                            "i3": "A proposal made on the same facts has been determined by the VT or HC",
+                                            "i4": "Alteration challenged was made more than 6 months ago",
+                                            "i5": "Alteration challenged was a reference no/address change or a clerical error correction only",
+                                            "i6": "Alteration challenged was a VT or HC decision"
+                                        }
+                                    },
+                                    "case_created_banding": {
+                                        "data_item_title": "flag declaring if the case created the Banding.",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "flag declaring if the case created the Banding. Not been populated on the CDB since June 1998",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": {
+                                            "Y": "Case created the Banding",
+                                            "Null": "Null"
+                                        }
+                                    },
+                                    "settlement_type": {
+                                        "data_item_title": "Code detailing type of settlement",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "Code recording the type of settlement reached on the Appeal. ",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": {
+                                            "A": "Agreed",
+                                            "C": "VT Confirmation",
+                                            "F": "Well founded",
+                                            "I": "Invalidity appeal decision - invalid",
+                                            "J": "Invalidity appeal decision - valid",
+                                            "L": "VT dismissed",
+                                            "N": "Invalidity notice withdrawn",
+                                            "T": "Transfer to another VT",
+                                            "V": "VT determination",
+                                            "W": "Withdrawn"
+                                        }
+                                    },
+                                    "vt_transmission_type_ind": {
+                                        "data_item_title": "Flag detailing the type of change made to a transmitted CT appeals",
+                                        "type": "string",
+                                        "format": "Single digit",
+                                        "description": "The nature of the changes made to CT Appeals that are notified to the Valuation Tribunal",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": {
+                                            "Null": "Null",
+                                            "A": "New CTAX Appeal Added",
+                                            "C": "CTAX Appeal Changed",
+                                            "R": "CTAX Appeal Re-instated",
+                                            "S": "CTAX Appeal Settled",
+                                            "T": "CTAX Appeal Settled Red'd to Re-instate"
+                                        }
+                                    },
+                                    "case_owner": {
+                                        "data_item_title": "Staff name who owns the case",
+                                        "type": "string",
+                                        "format": "Up to 28 digits",
+                                        "description": "The name of the staff member associated with the CDB login that has been assigned ownership of the case",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "team_id": {
+                                        "data_item_title": "The CDB ID of the Team assigned to the proposal/appeal",
+                                        "type": "string",
+                                        "format": "Up to 7 digits",
+                                        "description": "The CDB reference for the team",
+                                        "captured_how": "System generated / Manually captured",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "sub_unit": {
+                                        "data_item_title": "Name of the sub-unit in which the team sits",
+                                        "type": "string",
+                                        "format": "Up to 50 digits",
+                                        "description": "A human readable name created by Operations to aggregate teams",
+                                        "captured_how": "Manually generated",
+                                        "list_of_variables": "reading/reference/voa_teams/0.1.0/voa_teams.parquet"
+                                    },
+                                    "unit": {
+                                        "data_item_title": "ID of the organisation unit that the team sits in",
+                                        "type": "string",
+                                        "format": "Up to 25 digits",
+                                        "description": "Name of the unit with the overall organisational structure that the owning team sits in",
+                                        "captured_how": "Manually generated",
+                                        "list_of_variables": "reading/reference/voa_teams/0.1.0/voa_teams.parquet"
+                                    },
+                                    "received_date": {
+                                        "data_item_title": "Date the proposal was received",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date that the VOA received the proposal from the Interested Party",
+                                        "captured_how": "Manually generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "registered_date": {
+                                        "data_item_title": "Date proposal registered on the CDB",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date that the VOA registered the proposal on the CDB ",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "acknowledgement_date": {
+                                        "data_item_title": "Date proposal acknowledge",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date that the VOA acknowledged the proposal",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "settled_date": {
+                                        "data_item_title": "Date proposal/appeal was settled",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date that the VOA and IP settled the proposal / appeal",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "cleared_date": {
+                                        "data_item_title": "Date that the proposal/appeal was cleared",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date that the proposal/appeal was cleared on the CDB",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "working_docket_date:": {
+                                        "data_item_title": "Date Working Docket was produced",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date the Working Docket was produced on the CDB",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "disagreement_received_date": {
+                                        "data_item_title": "Date disagreement received",
+                                        "type": "date",
+                                        "format": "YYY-MM-DD",
+                                        "description": "Date disagreement received from the IP where the VOA had declared a proposal invalid",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "decision_doc_issued": {
+                                        "data_item_title": "Date decision document issued",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date decision document issued, only applies to proposals processed under Appeals Direct",
+                                        "captured_how": "Manually generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "appeal_created_date": {
+                                        "data_item_title": "Date appeal created",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date derived from either the date the proposal was transmitted to the VT for pre Appeals Direct, or, the date the appeal was created on the VTs system under Appeals Direct ",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable "
+                                    },
+                                    "vt_hearing_date": {
+                                        "data_item_title": "Date of the VT hearing",
+                                        "type": "date",
+                                        "format": "YYY-MM-DD",
+                                        "description": "Date given by the VT when the appeal will be heard at a Valuation Tribunal Hearing",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "target_date": {
+                                        "data_item_title": "Date when the proposal should be cleared by",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "The date, currently 62 days from receipt, when a proposal is targeted for clearance. Derived from CDB data",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "days_outstanding": {
+                                        "data_item_title": "Number of days a proposal / appeal has been outstanding",
+                                        "type": "integer",
+                                        "format": "",
+                                        "description": "Where a proposal / appeal is still outstanding and derived from date received data",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "days_to_clear": {
+                                        "data_item_title": "Number of days a proposal / appeal took to clear",
+                                        "type": "integer",
+                                        "format": "",
+                                        "description": "Where a proposal has been cleared data is derived from difference between received_date and decision_doc_issued and for an appeal derived from difference between received_date and activity code 40 date",
+                                        "captured_how": "System generated",
+                                        "list_of_variables": "Not applicable"
+                                    },
+                                    "latest_handoff_date": {
+                                        "data_item_title": "Date of the latest hand off",
+                                        "type": "date",
+                                        "format": "YYYY-MM-DD",
+                                        "description": "Date of the latest hand off as declared on the CDB by the appropriate activity code",
+                                        "captured_how": "Manually captured",
+                                        "list_of_variables": "Not appropriate"
+                                    }
+                                }
                             }
-                        }   
+                        }
                     }
                 }
+
+
             },
             "reference": {
                 "type": "folder",
                 "children": {
-                    "voa_teams": {
+                    "billing_authorities": {
                         "type": "dataset",
-                        "description": "VOA teams rock",
-                        "data_owner": "John Smith"
+                        "title": "Table of all Billing Authorities",
+                        "POMI_table_version": "V0.2.0",
+                        "description": "6 variable table, each record details a Billing Authority. Not all records will be current Billing Authorities, the active variable details if it is current at the point the data was pulled",
+                        "tags": [
+                            "BILLING_AUTHORITIES",
+                            "ECONOMIC_REGIONS"
+                        ],
+                        "data_owner": "table creator being used as place holder olanrewaju.adeyemi@voa.gsi.gov.uk",
+                        "data_authorisers": "contact email addresses of DO nominated authorisers",
+                        "location": "zones/reading/coda/billing_authorities.parquet",
+                        "provenance": "table maintained by an SQL Stored Procedure which is pulled from POMI_DATA to CODA",
+                        "provenance_link": "R:\\I&A\\2. Work\\POMI\\PROD\\BILLING_AUTHORITIES.sql",
+                        "update_type": "Daily",
+                        "supported": "Currently in support",
+                        "data_items": {
+                            "billing_auth_id": {
+                                "data_item_title": "Code assigned to a Billing Authority",
+                                "type": "integer",
+                                "format": "Four digit, can have a leading zero",
+                                "description": "Each Billing Authority has a four digit code assigned to it. Can be referred to a DOE Code",
+                                "captured_how": "System Generated",
+                                "list_of_variables": "See billing_authority.parquet"
+                            },
+                            "billing_auth_name": {
+                                "data_item_title": "Name of the Billing Authority",
+                                "type": "string",
+                                "format": "Forty digits",
+                                "description": "Name of the Billing Authority",
+                                "captured_how": "Manually Captured",
+                                "list_of_variables": "Not appropriate"
+                            },
+                            "welsh_name": {
+                                "data_item_title": "Name of Welsh BA in Welsh",
+                                "type": "string",
+                                "format": "Up to Seventy digit",
+                                "description": "Where the BA is Welsh, the English name will be in the billing_auth_name and the Welsh version here. English BA will have be Null",
+                                "captured_how": "Manually captured",
+                                "list_of_variables": "Not appropriate"
+                            },
+                            "economic_region": {
+                                "data_item_title": "Government office region",
+                                "type": "string",
+                                "format": "Up to 30 digits",
+                                "description": "Name of Government / Economic region in which the BA sits. Can be Null if the region is inactive",
+                                "captured_how": "Manually Captured",
+                                "list_of_variables": [
+                                    "East Midlands",
+                                    "Eastern",
+                                    "London",
+                                    "North East",
+                                    "North West",
+                                    "South East",
+                                    "South West",
+                                    "Wales",
+                                    "West Midlands",
+                                    "Yorks and Humber",
+                                    "Null"
+                                ]
+                            },
+                            "is_active": {
+                                "data_item_title": "Flag detailing if the Government / Economic region is active",
+                                "type": "string",
+                                "format": "Single digit",
+                                "description": "Y/N flag detailing if the Government / Economic region is active",
+                                "captured_how": "Manually captured",
+                                "list_of_variables": {
+                                    "Y": "Active",
+                                    "N": "Not Active"
+                                }
+                            },
+                            "is_published": "Yes",
+                            "published_date": "date"
+                        }
+
                     }
                 }
+            },
+            "property": {
+                "type": "folder",
+                "children": {}
             }
         }
     }
+
 }
