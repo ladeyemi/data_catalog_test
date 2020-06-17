@@ -9,9 +9,11 @@ Pre-requisites:
   * can also combined those steps with `npm run both`
 * navigate to the browser
 
-Live page at https://silverfield.github.io/json-react-demo/publish/index.html
+Live page at 
 
 # brief description
+
+Testing the creation of a data catalog 
 
 JavaScript modules are managed with NPM. 
 
